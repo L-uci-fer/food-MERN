@@ -1,9 +1,14 @@
+import path from "path";  
+import {fileURLToPath} from "url";
+
 const express = require('express')
 const app = express()
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const port = 5000;
 const mongoDB = require("./db")
-
-import path from "path";  //
 
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
